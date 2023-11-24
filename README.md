@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/)(v14.0.3) E-commerce project.
 
-If you like please give it a ⭐
+If you like the project, please give it a ⭐
 
 The project is live at [**PENTAZON**](https://next-js-ecommerce-amber-one.vercel.app/)
 
