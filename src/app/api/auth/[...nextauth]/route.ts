@@ -1,3 +1,4 @@
+import { mergeAnonymousCartIntoUserCart } from "@/lib/db/carts";
 import { prisma } from "@/lib/db/prisma";
 import { env } from "@/lib/env";
 import { PrismaAdapter } from "@auth/prisma-adapter";
@@ -19,6 +20,11 @@ export const authOptions: NextAuthOptions = {
             session.user.id = user.id;
             return session;
         },
+    },
+    events: {
+        async signIn({user}) {
+            await mergeAnonymousCartIntoUserCart(user.id);
+        }
     }
 };
 
