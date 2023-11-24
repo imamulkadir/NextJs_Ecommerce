@@ -12,18 +12,29 @@ export async function incrementProductQuantity(productId:string) {
 
     // increase the quantity if the same article is already in the cart
     if (articleInCart) { 
-        await prisma.cartItem.update({
-            where: { id: articleInCart.id },
-            data: { quantity: { increment: 1 } },
+        await prisma.cart.update({
+            where: { id: cart.id },
+            data: {
+                items: {
+                    update: {
+                        where: { id: articleInCart.id },
+                        data: { quantity: { increment: 1}},
+                    }
+                }
+            }
         })
     } else { // add to cart if cart is empty.
-        await prisma.cartItem.create({
+        await prisma.cart.update({
+            where: { id: cart.id },
             data: {
-                cartId: cart.id,
-                productId, 
-                quantity: 1,
-            },
-        });
+                items: {
+                    create: {
+                        productId, 
+                        quantity: 1,
+                    }
+                }
+            }
+        })
     }
 
     // refresh the current path
