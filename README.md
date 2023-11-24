@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/)(v14.0.3) E-commerce project.
 
 If you like please give it a ⭐
 
-The project is live at [Pentazon.com](https://next-js-ecommerce-amber-one.vercel.app/)
+The project is live at [**PENTAZON**](https://next-js-ecommerce-amber-one.vercel.app/)
 
 Below you can have a look at the preview of the site. 
 
